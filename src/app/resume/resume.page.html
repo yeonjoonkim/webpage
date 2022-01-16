@@ -1,0 +1,171 @@
+<ion-content [scrollEvents]="true" (ionScroll)="getScrollPos($event.detail.scrollTop)">
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="end">
+                <ion-menu-button class="menu_btn" autoHide="false"></ion-menu-button>
+            </ion-buttons>
+            <nav class="navbar">
+                <div class="navbar_logo">
+                    <a href="about">
+                        <img id="logo" src="assets/icon/logo.png" width="200" height="200">
+                    </a>
+                </div>
+
+                <ul class="navbar_menu">
+                    <li>
+                        <a href="about"><span style="color:#B2F9E9; font-style: bold;">About</span></a>
+                    </li>
+                    <li>
+                        <a href="resume"><span style="color:#D7F3FF; font-weight: 500;">Resume</span></a>
+                    </li>
+                    <li>
+                        <a href="project"><span style="color:#B2F9E9; font-style: bold;">Project</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar_icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/yeonjoonkim/">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </ion-toolbar>
+    </ion-header>
+    <main>
+
+        <div class="container">
+
+            <ion-segment [(ngModel)]="selected" (ionChange)="segmentChanged(selected)">
+                <ion-segment-button *ngFor='let choice of selection' [value]="choice">
+                    <ion-label>{{choice}}</ion-label>
+                </ion-segment-button>
+            </ion-segment>
+
+            <div [hidden]="selected !== selection[1]">
+                <ion-card class="edu_card" *ngFor="let edu of education" [ngClass]="upTrigger === selection[1] ? 'up' : ''">
+                    <ion-card-header>
+                        <ion-card-title>{{edu.degree}}</ion-card-title>
+                        <ion-card-subtitle>{{edu.institution}}</ion-card-subtitle>
+                        <ion-card-subtitle>{{edu.graduateDate}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+
+                        <div id="subject">
+                            <p>Key Subjects</p>
+                            <ul *ngFor="let subject of edu.subject">
+                                <li>{{subject}}</li>
+                            </ul>
+                        </div>
+                        <div id="edu_hastag">
+                            <div *ngFor="let tag of edu.hastag">
+                                <p>{{tag}}</p>
+
+                            </div>
+                        </div>
+
+                    </ion-card-content>
+                </ion-card>
+
+            </div>
+
+            <div [hidden]="selected !== selection[0]">
+
+                <ion-card class="epx_card" *ngFor="let exp of experience" [ngClass]="upTrigger === selection[0] ? 'up' : ''">
+                    <ion-card-header>
+                        <ion-card-title>{{exp.role}}</ion-card-title>
+                        <ion-card-subtitle>{{exp.company}} </ion-card-subtitle>
+                        <ion-card-subtitle>{{exp.position}} </ion-card-subtitle>
+                        <ion-card-subtitle>{{exp.startDate}} - {{exp.endDate}}</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div id="res">
+                            <ul *ngFor="let resp of exp.responsbilities">
+                                <li>{{resp}}</li>
+                            </ul>
+                        </div>
+                        <div id="exp_hastag">
+                            <div *ngFor="let tag of exp.hastagSkills">
+                                <p>{{tag}}</p>
+
+                            </div>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+
+            </div>
+
+
+            <div [hidden]="selected !== selection[2]">
+                <ion-card class="certi_card" *ngFor="let certi of certificate" [ngClass]="upTrigger === selection[2] ? 'up' : ''">
+                    <ion-card-header>
+                        <ion-card-title>{{certi.name}}</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <p>Certified Date: {{certi.certifiedDate}}</p>
+                        <p>Vaild Through: {{certi.valid}}</p>
+                    </ion-card-content>
+                </ion-card>
+
+            </div>
+
+        </div>
+    </main>
+
+    <div class="back-to-top-btn" *ngIf="backToTop" (click)="gotToTop()">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </div>
+    <ion-footer>
+        <div class="footer_container ">
+            <div class="col1 ">
+                <ul class="info ">
+                    <li class="copyright ">
+                        <p>&copy; Copyright 2021 Yeon Joon Kim</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col2 ">
+
+                <ul class="col2_menu ">
+                    <li>
+                        <a href="about ">About</a></li>
+                    <li>
+                        <a href="resume ">Resume</a></li>
+                    <li>
+                        <a href="project ">Project</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim ">
+                        LinkedIn
+                    </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col3">
+                <ul class="info">
+                    <li>
+                        <a href="https://abr.business.gov.au/ABN/View?id=13274577857 ">ABN: 13 274 577 857</a>
+                    </li>
+                    <li>
+                        <a href="tel:+61459632858">
+                            <ion-icon name="call-outline"></ion-icon> +61 459 632 858
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:yeonjoon.developer@gmail.com ">
+                            <ion-icon name="mail-open-outline"></ion-icon> yeonjoon.developer@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </ion-footer>
+</ion-content>

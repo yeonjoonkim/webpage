@@ -1,0 +1,33 @@
+<ion-app>
+
+    <ion-menu contentId="main-content" type="overlay">
+
+        <ion-content>
+            <ion-list id="menu_list">
+                <ion-menu-toggle auto-hide="false" *ngFor="let pages of Pages; let i = index">
+                    <ion-item (click)="activeIndex = i" routerDirection="root" [routerLink]="[pages.url]" lines="none" detail="false" [class.selected]="activeIndex === i">
+                        <ion-label class="title">{{ pages.title }}</ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+            <ion-list id="menu_list">
+                <li>
+                    <a href="https://www.linkedin.com/in/yeonjoon-kim">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/yeonjoonkim/">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </li>
+            </ion-list>
+
+        </ion-content>
+
+    </ion-menu>
+
+    <ion-router-outlet id="main-content">
+
+    </ion-router-outlet>
+</ion-app>

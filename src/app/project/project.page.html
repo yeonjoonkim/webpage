@@ -1,0 +1,98 @@
+<ion-content [scrollEvents]="true" (ionScroll)="getScrollPos($event.detail.scrollTop)">
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="end">
+                <ion-menu-button class="menu_btn" autoHide="false"></ion-menu-button>
+            </ion-buttons>
+            <nav class="navbar">
+                <div class="navbar_logo">
+                    <a href="about">
+                        <img id="logo" src="assets/icon/logo.png" width="200" height="200">
+                    </a>
+                </div>
+
+                <ul class="navbar_menu">
+                    <li>
+                        <a href="about"><span style="color:#B2F9E9; font-style: bold;">About</span></a>
+                    </li>
+                    <li>
+                        <a href="resume"><span style="color:#B2F9E9; font-style: bold; ">Resume</span></a>
+                    </li>
+                    <li>
+                        <a href="project"><span style="color:#D7F3FF; font-weight: 500;">Project</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar_icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/yeonjoonkim/">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </ion-toolbar>
+    </ion-header>
+
+    <main class="main">
+        <div class="container">
+            <img id="commingsoon" src="assets/icon/openingsoon.png">
+        </div>
+    </main>
+
+    <div class="back-to-top-btn" *ngIf="backToTop" (click)="gotToTop()">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </div>
+    <ion-footer>
+        <div class="footer_container ">
+            <div class="col1 ">
+                <ul class="info ">
+                    <li class="copyright ">
+                        <p>&copy; Copyright 2021 Yeon Joon Kim</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col2 ">
+
+                <ul class="col2_menu ">
+                    <li>
+                        <a href="about ">About</a></li>
+                    <li>
+                        <a href="resume ">Resume</a></li>
+                    <li>
+                        <a href="project ">Project</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim ">
+                        LinkedIn
+                    </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col3">
+                <ul class="info">
+                    <li>
+                        <a href="https://abr.business.gov.au/ABN/View?id=13274577857 ">ABN: 13 274 577 857</a>
+                    </li>
+                    <li>
+                        <a href="tel:+61459632858">
+                            <ion-icon name="call-outline"></ion-icon> +61 459 632 858
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:yeonjoon.developer@gmail.com ">
+                            <ion-icon name="mail-open-outline"></ion-icon> yeonjoon.developer@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </ion-footer>
+</ion-content>

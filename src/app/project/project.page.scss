@@ -1,0 +1,11 @@
+.main {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    background: white;
+    min-height: 900px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 877px) {}

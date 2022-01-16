@@ -1,0 +1,162 @@
+main {
+    display: flex;
+    background: #D4EDEA;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.edu_card {
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.epx_card,
+.certi_card {
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+.up {
+    transform: translateY(0px);
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+h1 {
+    color: #926E8E;
+    font-weight: 900;
+    justify-content: center;
+    text-align: center;
+}
+
+ion-card {
+    margin: 80px auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    --background: #EDFBFF;
+}
+
+ion-card ion-card-header {
+    --background: #9B90B3;
+}
+
+ion-card ion-card-content p,
+ion-card ion-card-content a {
+    color: #926E8E;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+ion-card-title,
+ion-card-subtitle {
+    font-weight: 900;
+    color: #D4EDEA;
+}
+
+ion-card-content ul {
+    padding: 5px 20px;
+}
+
+ion-card-content p {
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#subject ul,
+#edu_hastag p,
+#res ul,
+#exp_hastag p {
+    list-style-type: square;
+    font-weight: 600;
+    color: #7C5262;
+    font-size: 15px;
+}
+
+#edu_hastag p,
+#exp_hastag p {
+    color: #926E8E;
+}
+
+ion-card-content {
+    flex-direction: column;
+}
+
+#edu_hastag,
+#exp_hastag {
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ion-label {
+    font-size: 20px;
+    color: #263B39;
+    width: 100%;
+    padding-block: 20px;
+}
+
+ion-segment {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+ion-segment-button {
+    // --background-hover: #A0D6D0;
+    --ripple-color: transparent;
+}
+
+@media screen and (max-width: 765px) {
+    .container {
+        width: 90%;
+    }
+    ion-segment-button {
+        width: 200px;
+    }
+    ion-label {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+        width: 90%;
+    }
+    ion-segment-button {
+        width: 150px;
+    }
+    ion-label {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    ion-segment-button {
+        width: 140px;
+        flex-direction: wrap;
+    }
+    ion-label {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    ion-segment-button {
+        width: 140px;
+        flex-direction: wrap;
+    }
+    ion-label {
+        font-size: 10px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    ion-segment-button {
+        --background: dark;
+        --indicator-color: #A0D6D0;
+    }
+}

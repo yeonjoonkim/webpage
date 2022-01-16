@@ -1,0 +1,137 @@
+<ion-content [scrollEvents]="true" (ionScroll)="getScrollPos($event.detail.scrollTop)">
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="end">
+                <ion-menu-button class="menu_btn" autoHide="false"></ion-menu-button>
+            </ion-buttons>
+            <nav class="navbar">
+                <div class="navbar_logo">
+                    <a href="about">
+                        <img id="logo" src="assets/icon/logo.png" width="200" height="200">
+                    </a>
+                </div>
+
+                <ul class="navbar_menu">
+                    <li>
+                        <a href="about"><span style=" color:#D7F3FF; font-weight: 500">About</span></a>
+                    </li>
+                    <li>
+                        <a href="resume"><span style="color:#B2F9E9; font-style: bold;">Resume</span></a>
+                    </li>
+                    <li>
+                        <a href="project"><span style="color:#B2F9E9; font-style: bold;">Project</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar_icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/yeonjoonkim/">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </ion-toolbar>
+    </ion-header>
+    <div class="background">
+        <main class="main">
+            <div id="container">
+                <div class="left" [ngClass]="loadDone ? 'left_right' : ''"></div>
+                <div class="right" [ngClass]="loadDone ? 'right_left' : ''">
+                    <div id="content">
+                        <h1>{{info.name}}</h1>
+                        <p id="occupation">{{info.position}}</p>
+                        <p>
+                            I am currently undertaking a Bachelor of Information Technology at James Cook University, Cairns with an expected graduation date of Febuary 2022. From the comprehensive coursework, I have gained knowledge and a strong foundation in system administration,
+                            computer architecture, ethics in information systems, system analysis, and design. The coursework empowers me to play a support role in meeting the computing needs of non-technical staff. Furthermore, I also hold diploma in
+                            Business from the Holmes Institute, Cairns respectively. This multidisciplinary education has been beneficial as it has cultivated my intrapersonal and interpersonal skills through improved communication skills and enhanced
+                            awareness of good relationships such as active listening and mutual respect. I hold such qualities as being beneficial in working collaboratively in a professional capacity. Furthermore, my varied education allows me to review
+                            problem from multiple dimensions and reinforced my problem solving and evaluation skills. Such skills would be beneficial in supporting the design and maintenance of projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="hastag_container">
+            <div class="skill_box" [ngClass]="loadDone ? 'up' : ''">
+                <div class="skill http">
+                    <p>#http</p>
+                </div>
+                <div class="skill typescript">
+                    <p>#typescript</p>
+                </div>
+                <div class="skill css">
+                    <p>#css</p>
+                </div>
+                <div class="skill angular">
+                    <p>#angular</p>
+                </div>
+                <div class="skill vue">
+                    <p>#vue</p>
+                </div>
+                <div class="skill java">
+                    <p>#java</p>
+                </div>
+                <div class="skill python">
+                    <p>#python</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="back-to-top-btn" *ngIf="backToTop" (click)="gotToTop()">
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </div>
+    <ion-footer>
+        <div class="footer_container ">
+            <div class="col1 ">
+                <ul class="info ">
+                    <li class="copyright ">
+                        <p>&copy; Copyright 2021 Yeon Joon Kim</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col2 ">
+
+                <ul class="col2_menu ">
+                    <li>
+                        <a href="about ">About</a></li>
+                    <li>
+                        <a href="resume ">Resume</a></li>
+                    <li>
+                        <a href="project ">Project</a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/yeonjoon-kim ">
+                        LinkedIn
+                    </a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col3">
+                <ul class="info">
+                    <li>
+                        <a href="https://abr.business.gov.au/ABN/View?id=13274577857 ">ABN: 13 274 577 857</a>
+                    </li>
+                    <li>
+                        <a href="tel:+61459632858">
+                            <ion-icon name="call-outline"></ion-icon> +61 459 632 858
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:yeonjoon.developer@gmail.com ">
+                            <ion-icon name="mail-open-outline"></ion-icon> yeonjoon.developer@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </ion-footer>
+</ion-content>
